@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>会员注册</title>
+    <style type="text/css">
+        .riqi {
+            color: aliceblue
+        }
+        
+        .kunqi {
+            color: aliceblue
+        }
+    </style>
+    <script type="text/javascript">
+        function checkLogin() {
+            if (document.frm.userName.value == "") {
+                alert("用户名称不能为空！");
+                document.frm.userName.focus();
+                return false;
+            }
+            if ((document.frm.userName.value != "ikun") && (document.frm.userName.value != "IKUN")) {
+                alert("用户名或密码错误！");
+                document.frm.userName.focus();
+                return false;
+            } else if (document.frm.password.value == "") {
+                alert("密码不能为空！");
+                document.frm.password.focus();
+                return false;
+            } else if ((document.frm.userName.value != "ikun") && (document.frm.userName.value != "IKUN")) {
+                alert("用户名或密码错误！");
+                document.frm.password.focus();
+                return false;
+            }
+
+        }
+    </script>
+</head>
+
+<body background="ikun登录bg.jpg">
+    <strong><p class="kunqi"><td align="right" class="size">鲲期:</td></p></strong>
+    <td align="right">
+        <strong><div class="riqi" id="time"></div></strong>
+        <script type="text/javascript">
+            function changeTime() {
+                var d = new Date();
+                var year = d.getFullYear();
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+                var hour = d.getHours();
+                var minute = d.getMinutes();
+                var second = d.getSeconds();
+                var str = year + "年" + month + "月" + day + "日" + hour + ":" + minute + ":" + second;
+                document.getElementById("time").innerHTML = str;
+
+                window.setTimeout(changeTime, 1000);
+            }
+            changeTime();
+            var day = new Date().getDay();
+            switch (day) {
+                case 1:
+                    x = "今天是kun一哦";
+                    break;
+                case 2:
+                    x = "今天是kun二哦";
+                    break;
+                case 3:
+                    x = "今天是kun三哦";
+                    break;
+                case 4:
+                    x = "今天是kun四哦";
+                    break;
+                case 5:
+                    x = "今天是kun五哦";
+                    break;
+                case 6:
+                    x = "今天是kun六哦";
+                    break;
+                case 7:
+                    x = "今天是kun日哦";
+                    break;
+            }
+            document.write(x);
+        </script>
+        <form name="frm" action="ikun登录成功.html" method="get" onsubmit="return checkLogin()">
+            <table class="ikun" background="ikun登录.jpg" border="1" align="center" width="700">
+                <caption>
+                    <h2>ikun登录</h2>
+                </caption>
+
+                <tr>
+                    <td>
+                        <table border="0" width="500" align="center">
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b>基本信息（必填）</b></td>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <hr/>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td align="right">ikun名:</td>
+                                <td align="left"><input type="text" name="userName" size="30" placeholder="请输入用户名"></td>
+
+                                <tr>
+                                    <td align="right">ikun密码：</td>
+                                    <td align="left"><input type="text" name="password" size="30" placeholder="请输入密码"></td>
+                                </tr>
+
+                                <tr>
+                                    <td align="right">性别：</td>
+                                    <td align="left"><input type="radio" name="sex" value="男" checked>男
+                                        <input type="radio" name="sex" value="女">女</td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td align="right"></td>
+                                    <td align="left"><input type="file" name="file" id="file" value="" /><br>
+
+                                        <strong class="tou">头像</strong><img src="../ikun注册/c.gif" alt="头像图片" title="头像图片" width="80" height="80" /><br></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b>其他信息（选填）</b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <hr/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">爱好：</td>
+                                    <td align="left"><input type="checkbox" name="like" value="1">唱
+                                        <input type="checkbox" name="like" value="2">跳
+                                        <input type="checkbox" name="like" value="3">rap
+                                        <input type="checkbox" name="like" value="4">篮球
+                                        <input type="checkbox" name="like" value="5">中分
+                                        <input type="checkbox" name="like" value="6">背带裤
+                                        <input type="checkbox" name="like" value="7">ikun
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">个人简介：</td>
+                                    <td align="left"><textarea name="remark" cols="50" rows="5">我是练习时长二十年半的ikun练习生</textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+
+                                <tr>
+                                    <td align="right"></td>
+                                    <td align="left">
+                                        <input type="submit" value="登录" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="reset" value="重写" />
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+
+
+
+
+                        </table>
+
+
+
+
+
+        </form>
+
+
+</body>
+
+</html>

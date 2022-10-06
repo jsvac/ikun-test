@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ikun检测</title>
+    <style type="text/css">
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center
+        }
+        
+        .box p {
+            margin: 0;
+            padding: 0;
+            line-height: 100px;
+            text-align: center;
+            font-size: 36px
+        }
+        
+        .box input {
+            width: 70px;
+            height: 40px
+        }
+        
+        .team {
+            float: left;
+            width: 8%;
+            text-align: center;
+            padding: 0% 2.3%;
+        }
+        
+        .clean {
+            clear: both
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        var arry = 100;
+
+        function checkLogin() {
+
+            if (document.frm.ti1.value == "") {
+                alert("第一题答案不能为空！");
+                document.frm.ti1.focus();
+                return false;
+            }
+            if (document.frm.ti1.value != "B") {
+                arry = arry - 20;
+                document.frm.ti1.focus();
+                return false;
+            } else if (document.frm.ti2.value == "") {
+                alert("第二题答案不能为空！");
+                document.frm.ti2.focus();
+                return false;
+            } else if (document.frm.ti2.value != "B") {
+                arry = arry - 20;
+                document.frm.ti2.focus();
+                return false;
+            } else if (document.frm.ti3.value == "") {
+                alert("第三题答案不能为空！");
+                document.frm.ti3.focus();
+                return false;
+            } else if (document.frm.ti3.value != "C") {
+                arry = arry - 20;
+                document.frm.ti3.focus();
+                return false;
+            } else if (document.frm.ti4.value == "") {
+                alert("第四题答案不能为空！");
+                document.frm.ti4.focus();
+                return false;
+            } else if (document.frm.ti4.value != "B") {
+                arry = arry - 20;
+                document.frm.ti4.focus();
+                return false;
+            } else if (document.frm.ti5.value == "") {
+                alert("第五题答案不能为空！");
+                document.frm.ti5.focus();
+                return false;
+            } else if (document.frm.ti5.value != "C") {
+                arry = arry - 20;
+                document.frm.ti5.focus();
+                return false;
+            }
+            switch (arry) {
+                case 100:
+                    alert("100分的真ikun");
+                    break;
+                case 80:
+                    alert("80分的你离真ikun还有点距离哦！！！");
+                    break;
+                case 60:
+                    alert("60分的纯路人");
+                    break;
+                case 40:
+                    alert("只有40分的你 不要当小黑子,要当ikun!");
+                    break;
+                case 20:
+                    alert("希望你收敛点，20分的你离小黑子只有一步之遥");
+                    break;
+                case 0:
+                    alert("尼玛的0分小黑子");
+                    break;
+            }
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <div class="box">
+        <p><strong>请点击开始按钮</strong></p>
+        <input type="button" value="开始" />
+        <input type="button" value="停止" />
+    </div>
+    <script>
+        var arr = ["小黑子", "真ikun", "ikun团团长", "纯路人"];
+        var timer;
+        document.getElementsByTagName("input")[0].onclick = function() {
+            clearInterval(timer);
+            timer = setInterval(function() {
+                var num = Math.floor(Math.random() * arr.length);
+                document.getElementsByTagName("p")[0].innerText = arr[num];
+            }, 10);
+        }
+        document.getElementsByTagName("input")[1].onclick = function() {
+            clearInterval(timer);
+        }
+    </script>
+    <br>
+    <br>
+    <div>
+        <h1 align="center">全国ikun统一考试</h1>
+        <form name="frm" action="../ikun注册/注册ikun账号.html" method="get" onsubmit="return checkLogin()">
+            <h3 style="float: left">1.蔡徐坤出生于哪一年</h3><br> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="ti1" value="" style="width: 70px" placeholder="请输入答案" />
+            <div class="clean"></div>
+            <div>
+                A.1999年&nbsp;&nbsp; B.1998年&nbsp;&nbsp; C.1997年&nbsp;&nbsp; D.1996年
+            </div>
+
+            <div>
+                <h3 style="float: left">2.请给以下招式按时间先后排序</h3><br> &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="ti2" value="" style="width: 70px" placeholder="请输入答案" />
+                <div class="clean"></div>
+                <div class="team"><img src="千鸟螺旋丸.jpg" width="108" height="135" />
+                    <p>1.千鸟螺旋丸</p>A.4213</div>
+                <div class="team"><img src="乌鸦坐飞机.jpg" width="106" height="135" />
+                    <p>2.乌鸦坐飞机</p>B.4321</div>
+                <div class="team"><img src="捂裆派.jpg" width="110" height="135" />
+                    <p>3.捂裆派</p>C.2134</div>
+                <div class="team"><img src="铁山靠.jpg" width="100" wodth="100" />
+                    <p>4.铁山靠</p>D.1324</div>
+            </div>
+
+            <div class="clean"></div>
+
+            <h3 style="float: left">3.古诗题：“春风又绿江南岸”的下一句是？</h3><br>
+            <input type="text" name="ti3" value="" style="width: 70px" placeholder="请输入答案" />
+            <div class="clean"></div>
+            <div>
+                A.唱跳rap打篮球&nbsp;&nbsp; B.基尼实在是太美&nbsp;&nbsp; C.练习时长两年半
+            </div>
+
+
+            <h3 style="float:left">4.词语释义：“树枝”是什么意思？</h3><br>
+            <input type="text" name="ti4" value="" style="width: 70px" placeholder="请输入答案" />
+            <div class="clean"></div>
+            <div>
+                A.理智&nbsp;&nbsp; B.素质&nbsp;&nbsp; C.苏珊
+            </div>
+
+
+            <h3 style="float: left">5.我们ikun的口号是什么？</h3><br>
+            <input type="text" name="ti5" value="" style="width: 70px" placeholder="请输入答案" />
+            <div class="clean"></div>
+            A.坐在树枝上卖荔枝&nbsp;&nbsp; B.鸡你实在是太美&nbsp;&nbsp; C.中分头，背带裤，我们ikun你记住&nbsp;&nbsp; D.苏珊你食不食油饼
+
+            <br>
+            <br>
+
+            <input type="submit" value="提交" /> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="重置" />
+        </form>
+    </div>
+</body>
+
+</html>

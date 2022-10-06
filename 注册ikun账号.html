@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>真ikun</title>
+    <style type="text/css">
+        #time {
+            font-size: 25px
+        }
+    </style>
+    <script type="text/javascript">
+        function checkLogin() {
+            if (document.frm.userName.value == "") {
+                alert("用户名不能为空！");
+                document.frm.userName.focus();
+                return false;
+            } else if ((document.frm.userName.value != "ikun") && (document.frm.userName.value != "IKUN")) {
+                alert("用户名或密码错误！");
+                document.frm.userName.focus();
+                return false;
+            } else if (document.frm.password.value == "") {
+                alert("密码不能为空！");
+                document.frm.password.focus();
+                return false;
+            } else if ((document.frm.password.value != "ikun") && (document.frm.password.value != "IKUN")) {
+                alert("用户名或密码错误！");
+                document.frm.password.focus();
+                return false;
+            } else if ((document.frm.password2.value != "ikun") && (document.frm.password2.value != "IKUN")) {
+                alert("两次的密码不同！");
+                document.frm.password2.focus();
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body background="c.gif">
+    <h1>注册ikun账号</h1>
+    <div id="time"></div>
+    <script type="text/javascript">
+        function changeTime() {
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+            var hour = d.getHours();
+            var minute = d.getMinutes();
+            var second = d.getSeconds();
+            var str = year + "年" + month + "月" + day + "日" + hour + ":" + minute + ":" + second;
+            document.getElementById("time").innerHTML = str;
+
+            window.setTimeout(changeTime, 1000);
+        }
+        changeTime();
+        var day = new Date().getDay();
+        switch (day) {
+            case 0:
+                x = "今天是每周ikun的第7天";
+            case 1:
+                x = "今天是每周ikun的第1天";
+                break;
+            case 2:
+                x = "今天是每周ikun的第2天";
+                break;
+            case 3:
+                x = "今天是每周ikun的第3天";
+                break;
+            case 4:
+                x = "今天是每周ikun的第4天";
+                break;
+            case 5:
+                x = "今天是每周ikun的第5天";
+                break;
+            case 6:
+                x = "今天是每周ikun的第6天";
+                break;
+
+        }
+        document.write(x);
+    </script>
+    <form name="frm" action="ikun注册成功.html" method="get" onsubmit="return checkLogin()">
+
+        用户名：<input type="text" name="userName" id="" value="" placeholder="请输入用户名" />
+
+        <input type="button" name="checkusername" id="checkusername" value="检查用户名是否被注册" /><br> 密码：
+
+        <input type="password" name="password" id="" value="" placeholder="请输入密码"><br> 确认密码：
+
+        <input type="password" name="password2" value="" id="re_password" /><br> 性别：
+
+        <input type="radio" name="sex" id="sex_man" value="man" checked="checked" />男<input type="radio" name="sex" id="sex_women" value="women" />女<br> 你的简介：
+        <select name="homespace">
+			<option value="ikun" selected="selected">偶像练习生</option>
+		</select> 兴趣爱好：
+
+        <input type="checkbox" name="interest" id="ins_football" value="football" />足球⚽
+
+        <input type="checkbox" name="interest" id="ins_basketball" value="basketball" />篮球🏀
+
+        <input type="checkbox" name="interest" id="ins_volleyball" value="volleyball" />排球🏐
+
+        <input type="checkbox" name="interest" id="ins_beidaiku" value="beidaiku" />穿背带裤
+
+        <input type="checkbox" name="interest" id="ins_chang" value="chang" />唱
+
+        <input type="checkbox" name="interest" id="ins_tiao" value="tiao" />跳
+
+        <input type="checkbox" name="interest" id="ins_rap" value="rap" />rap
+
+        <input type="checkbox" name="interest" id="ins_ikun" value="ikusn" />ikun
+
+        <input type="checkbox" name="interest" id="ins_zhongfen" value="zhongfen" />中分<br> 选择头像：
+
+        <input type="file" name="file" id="file" value="" /><br>
+
+        <img src="c.jpg" alt="头像图片" title="我是蔡徐坤，我爱打篮球" onClick="alert('我是蔡徐坤，你干嘛~')" width="80" height="80" /><br>
+
+        <input type="reset" value="重置信息" />
+
+        <input type="submit" id="submit" value="注册账号" />
+
+        <input type="hidden" name="regist" id="" value="default" />
+    </form>
+</body>
+
+</html>
